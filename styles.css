@@ -1,23 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --lightest: #EAFFFD;
+    --light: #C9F0FF;
+    --base: #404E7C;
+    --dark: #3A4670;
+    --darker: #303A5D;
+    --darkest: #251F47;
+}
+
 body {
+    background-color: var(--light);
+    color: white;
+    font-family: 'Roboto', sans-serif;
     height: 100vh;
     margin: 0px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    gap: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#game {
+    display: grid;
+    gap: 30px;
+    grid-template-rows: 60px 530px 60px;
     justify-content: center;
     align-items: center;
 }
 
 #board {
-    background-color: black;
-    height: 400px;
-    width: 400px;
+    background-color: var(--darkest);
+    border: 15px solid var(--darkest);
+    border-radius: 10px;
+    height: 500px;
+    width: 500px;
     display: grid;
-    gap: 20px;
+    gap: 15px;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 }
 
+button {
+    all:unset;
+}
+
+#heading {
+    background-color: var(--base);
+    height: 100%;
+    display: grid;
+    align-items: center;
+    border: 15px solid var(--darkest);
+    border-radius: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
 .box {
-    display: flex;
+    background-color: var(--base);
+    display: grid;
+    width: 100%;
+    justify-content: center;
     text-align: center;
     align-items: center;
+    font-size: 7rem;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: var(--dark);
+}
+
+button:active {
+    background-color: var(--darker);
+}
+
+#buttons {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+}
+
+#start, #reset {
+    background-color: var(--base);
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 15px solid var(--darkest);
+    border-radius: 10px;
 }
